@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    c<style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:statusBarColor">@color/statusBarColor</item>
+        <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Primary</item>
+    </style>
+
+</resources>

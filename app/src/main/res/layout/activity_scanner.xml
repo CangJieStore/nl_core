@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="scanModel"
+            type="cn.cangjie.build.ui.scanner.ScannerViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <cn.cangjie.uikit.scanner.ViewfinderView
+            android:id="@+id/viewfinderView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cornerColor="@color/white"
+            app:frameColor="@color/white"
+            app:labelText="放入框内，自动扫描"
+            app:labelTextColor="@color/white"
+            app:labelTextLocation="bottom"
+            app:labelTextSize="16sp"
+            app:laserColor="@color/white" />
+
+        <cn.cangjie.uikit.titlebar.TitleBar xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            app:title_actionTextColor="@color/white"
+            app:title_actionTint="@color/white"
+            app:title_dividerBackground="#cccccc"
+            app:title_dividerHeight="0.5dp"
+            app:title_leftTextColor="@color/white"
+            app:title_leftTextDrawable="@mipmap/update_close_img"
+            app:title_leftTextDrawableTint="@color/white"
+            app:title_outPadding="10dp"
+            app:title_rightTextColor="@color/white"
+            app:title_rightTextDrawableTint="@color/white"
+            app:title_statusBarLightMode="true"
+            app:title_titleMainText="@string/app_name"
+            app:title_titleMainTextColor="@color/white"
+            app:title_titleSubTextColor="@color/white"
+            app:title_viewPressedAlpha="0.2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_torch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="40dp"
+                android:src="@mipmap/ic_open_light" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="40dp"
+                android:src="@mipmap/ic_open_gallery"
+                binding:onClickCommand="@{scanModel.picScanner}" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

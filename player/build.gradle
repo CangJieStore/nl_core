@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+//apply plugin: "guru.stefma.bintrayrelease"
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly 'androidx.annotation:annotation:1.2.0'
+    api 'cn.nvwa:player_core:1.0.1'
+}
+//version = "1.0.6"
+//group = "cn.nvwa"
+//androidArtifact {
+//    artifactId = "player"
+//}
+//publish {
+//    userOrg = 'nvwaframe'
+//    desc = 'for all'
+//}

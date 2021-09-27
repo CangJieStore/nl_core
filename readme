@@ -1,0 +1,1 @@
+./gradlew clean build bintrayUpload -PbintrayUser=nvwaframe  -PbintrayKey=c50e7f16df8e6cfa6b7281f67c167bb34f588214 -PdryRun=false --stacktrace

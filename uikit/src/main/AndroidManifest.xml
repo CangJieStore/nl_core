@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.cangjie.uikit">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        tools:targetApi="n">
+        <activity android:name=".update.activity.UpdateBackgroundActivity" />
+        <activity
+            android:name=".update.activity.ThemeActivity"
+            android:theme="@style/DialogActivityTheme" />
+
+        <service android:name=".update.service.UpdateService" />
+        <service android:name=".update.utils.DownloadService" />
+
+        <provider
+            android:name=".update.utils.InstallFileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/install_file" />
+        </provider>
+    </application>
+
+</manifest>

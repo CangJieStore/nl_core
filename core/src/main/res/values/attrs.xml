@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="onClickCommand" format="reference" />
+    <attr name="isThrottleFirst" format="boolean" />
+    <attr name="url" format="string" />
+
+    <declare-styleable name="View">
+        <attr name="onClickCommand" />
+        <attr name="isThrottleFirst" />
+    </declare-styleable>
+
+    <declare-styleable name="ImageView">
+        <attr name="url" />
+        <attr name="request_width" format="integer" />
+        <attr name="request_height" format="integer" />
+        <attr name="placeholderRes" format="reference|color" />
+        <attr name="onSuccessCommand" format="reference" />
+        <attr name="onFailureCommand" format="reference" />
+
+    </declare-styleable>
+</resources>

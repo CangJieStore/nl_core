@@ -5,8 +5,19 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath 'com.android.tools.build:gradle:4.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0-M1"
+    }
+}
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url = 'https://dl.bintray.com/nvwaframe/maven'
+        }
+        maven { url 'https://jitpack.io' }
+
     }
 }
 task clean(type: Delete) {
